@@ -1,0 +1,15 @@
+mevcut dizin ve alt dizinlerindeki ".sh" uzantılı tüm dosyaların adlarını listeler.
+
+
+
+find . komutu mevcut dizin ve alt dizinlerinde arama yapar.
+
+-type f seçeneği sadece dosya türündeki nesneleri (yani klasörleri dışarıda tutar) aramaya izin verir.
+
+-name "*.sh" seçeneği sadece ".sh" uzantılı dosyaları aramaya izin verir.
+
+-exec basename {} .sh \; seçeneği bulunan dosyalar için basename komutunu uygular. basename komutu dosya adını dizin yolundan ayırır. {} bulunan dosya adını ve yolunu içerir. .sh seçeneği dosyanın uzantısını kaldırır ve \; seçeneği basename komutunun uygulanmasını bitirir.
+
+Bu kod, mevcut dizin ve alt dizinlerindeki ".sh" uzantılı tüm dosyaların adlarını listeler ve her bir adın tek bir satırda yazılmasını sağlar.
+
+find . -type f -name "*.sh" -exec basename {} .sh \;

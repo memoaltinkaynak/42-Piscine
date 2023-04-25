@@ -1,0 +1,12 @@
+$FT_USER değişkeninin ait olduğu grupları listeler ve bu grupları virgülle ayrılmış, bir satırda yazdırır.
+
+
+groups $FT_USER komutu $FT_USER değişkenine atanmış kullanıcının ait olduğu grupları listeler.
+
+tr ' ' ',' komutu listelenen grupların aralarındaki boşlukları virgülle değiştirir.
+
+tr -d "\n" komutu listelenen grupların her birinin ayrı bir satırda yazılmasını engeller ve tüm grupları tek bir satırda yazdırır.
+
+Bu kod, $FT_USER değişkenine atanmış kullanıcının ait olduğu grupları virgülle ayrılmış, bir satırda ekrana yazdırır.
+
+groups $FT_USER | tr ' ' ',' | tr -d "\n"

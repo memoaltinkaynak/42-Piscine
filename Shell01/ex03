@@ -1,0 +1,12 @@
+mevcut dizin ve alt dizinlerdeki toplam dosya ve klasör sayısını verir.
+
+
+find . komutu mevcut dizin ve alt dizinlerdeki tüm dosya ve klasörleri listeler.
+
+wc -l komutu listelenen nesne sayısını verir. -l seçeneği sadece satır sayısını verir.
+
+tr -d ' ' komutu listelenen sayının yanındaki boşlukları kaldırır ve sadece sayıyı verir.
+
+Bu kod, mevcut dizin ve alt dizinlerdeki toplam dosya ve klasör sayısını verir.
+
+find . | wc -l | tr -d ' '

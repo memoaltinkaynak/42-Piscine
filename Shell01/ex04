@@ -1,0 +1,11 @@
+sistemin ağ arayüzlerinin MAC adresini (aynı zamanda "ether" adresi olarak da bilinir) çıkarmak için ifconfig ve awk komutlarının bir kombinasyonunu kullanır.
+
+ifconfig bir sistemin ağ arayüzleri hakkında bilgi gösterir. Herhangi bir seçeneksiz çalıştırıldığında, sistemdeki tüm ağ arayüzleri hakkında bilgi verir.
+
+awk bir metin işleme programıdır ve verileri yapılandırılmış bir şekilde arama, değiştirme veya çıktı olarak raporlama yapar.
+
+'/ether/{print $2}' bu awk komutunun ne yapması gerektiğini tanımlar. /ether/ sadece ifconfig komutunun çıktısındaki "ether" kelimesini içeren satırları belirler. {print $2} bu belirlenen satırların ikinci sütununu (yani MAC adresinin bulunduğu yeri) yazdırır.
+
+Bu kod, sistemdeki tüm ağ arayüzlerinin MAC adreslerini çıkarır ve bunları sıralı bir şekilde ekrana yazdırır.
+
+ifconfig | awk '/ether/{print$2}'
